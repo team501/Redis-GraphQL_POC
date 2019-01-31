@@ -1,0 +1,20 @@
+type Query {
+    ussStatistics(key:String): [USSStatistics]
+    findUSSStatisticsByKey(key:String):USSStatistics
+    getInductsForLastHour(key:String,startTime:String):InductForLastHourOutput
+}
+
+type InductForLastHourOutput{
+	duration:Int!
+	condition:String!
+	totalInducts:Long!
+	measure:Int!
+}
+
+type USSStatistics {
+    id: Int!
+    ussItemId:Int!
+    unitSorterSide:Int!
+    created:String!
+    updated:String!
+}
